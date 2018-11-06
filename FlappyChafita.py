@@ -21,13 +21,14 @@ score = 0
 
 #ball
 pos_x = 190
-pos_y = 275
+pos_y = 300
 
 #values for obsacles
 x1 = 750
 x2 = 920
 y1 = random.choice([180, 200, 250, 320, 400, 460])
 y2 = 500
+
 #set display 
 gameDisplay = pygame.display.set_mode((display_x,display_y))
 pygame.display.set_caption("FappyChafita")
@@ -38,13 +39,11 @@ font = pygame.font.SysFont(None, 20)
 
 def end():
     pygame.display.update()
-    clock.tick(10)
+    clock.tick(20)
 
 
 def ball(pos_x, pos_y):
     pygame.draw.circle(gameDisplay, ((red)), [pos_x, pos_y], 20)
-
-
 
 def barrierCreator(x1):
     pygame.draw.rect(gameDisplay, ((pipecolor)), pygame.Rect(x1,0,40,800))
@@ -97,7 +96,7 @@ while not done:
     y_change = 5
 
     if pressed[pygame.K_UP]:
-        y_change = -20
+        y_change = -10
     
     pos_y = y_change + pos_y
 
@@ -129,7 +128,7 @@ while not done:
             done = True
 
     gameDisplay.fill((white))    
-    gameDisplay.blit(text,(200 - text.get_width() // 2 , 500 - text.get_height() // 2))
+    gameDisplay.blit(text,(250 - text.get_width() // 2 , 360 - text.get_height() // 2))
     pygame.display.flip()
     end()
 pygame.quit()
