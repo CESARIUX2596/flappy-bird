@@ -6,7 +6,7 @@ from collections import deque
 import pygame
 from pygame.locals import *
 
-os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0,0)
+os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d"    % (0,0)
 
 FPS = 30
 ANIMATION_SPEED = 0.09  # pixels per millisecond
@@ -58,7 +58,7 @@ class Bird(pygame.sprite.Sprite):
 class PipePair(pygame.sprite.Sprite):
     WIDTH = 80
     PIECE_HEIGHT = 32
-    ADD_INTERVAL = 4800
+    ADD_INTERVAL = 4000
 
     def __init__(self, pipe_end_img, pipe_body_img):
         self.x = float(WIN_WIDTH - 1)
